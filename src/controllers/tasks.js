@@ -12,7 +12,7 @@ async function POST(req, res) {
   const token = getToken(req.headers);
   const task = createTask(content, done);
   await saveTask(token, task);
-  return res.status(201).json({ message: "Task created" });
+  return res.status(201).json({ task });
 }
 
 async function DELETE(req, res) {
