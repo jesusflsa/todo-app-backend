@@ -2,7 +2,7 @@ const { getToken } = require("../utils/token/getToken");
 const { verifyToken } = require("../utils/token/verifyToken");
 
 const auth = async (req, res, next) => {
-  const nonSecurePaths = ["/example", "/api/user",];
+  const nonSecurePaths = ["/example", "/api/user/login", "/api/user/signup", "/api/user"];
   if (nonSecurePaths.includes(req.path)) return next();
 
   const token = getToken(req.headers);

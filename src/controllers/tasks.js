@@ -9,7 +9,7 @@ async function POST(req, res) {
     return res.status(400).json({ message: "Content is required" });
   }
   const token = getToken(req.headers);
-  const task = { content, done, id };
+  const task = { id, content, done };
   await saveTask(token, task);
   return res.status(201).json({ task });
 }

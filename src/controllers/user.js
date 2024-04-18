@@ -5,7 +5,7 @@ const { createTaskList } = require("../utils/tasks/createTaskList");
 const { getTasks } = require("../utils/tasks/getTasks");
 
 // Log in a user
-const GET = async (req, res) => {
+const LOGIN = async (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -31,7 +31,7 @@ const GET = async (req, res) => {
 };
 
 // Register a new user
-const POST = async (req, res) => {
+const SIGNUP = async (req, res) => {
   const { username, password, tasks } = req.body;
 
   if (!username || !password) {
@@ -52,4 +52,4 @@ const POST = async (req, res) => {
   });
 };
 
-module.exports = { POST, GET };
+module.exports = { SIGNUP, LOGIN };
